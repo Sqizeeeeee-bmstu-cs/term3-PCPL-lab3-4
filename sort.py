@@ -1,10 +1,10 @@
 
 
 def sort_w_lambda(items: list[int]) -> None: 
-    items.sort(key=lambda x: abs(x))
+    items.sort(key=lambda x: abs(x), reverse=True)
 
 def sort_without_lamdba(items: list[int]) -> None:
-    items.sort(key=abs)
+    items.sort(key=abs, reverse=True)
 
 def custom_bubble_sort_without_lamdba(items: list[int]) -> None:
 
@@ -14,6 +14,7 @@ def custom_bubble_sort_without_lamdba(items: list[int]) -> None:
             if (abs(items[j]) > abs(items[j + 1])):
 
                 items[j], items[j + 1] = items[j + 1], items[j]
+    items = items[::-1]
 
 def custom_quicksort_inplace(items: list[int], start: int = 0, end: int = None) -> None:
     if end is None:
