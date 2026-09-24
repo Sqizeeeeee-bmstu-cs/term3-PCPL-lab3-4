@@ -33,11 +33,19 @@ def f4(data: list[dict[Any]], sorted_data: list[str]) -> None:
 
         print(f"{item1}, зарплата {item2} руб.")
 
-    pass
-
 def main():
 
-    path = sys.argv[1]
+    try:
+
+        path = sys.argv[1]
+
+    except IndexError:
+
+        print('Небходимо передать аргумент путь к файлу (например: data_light.json)')
+
+    except Exception as e:
+
+        print(f'Неизвестная ошибка {e}')
 
     with open(path, encoding='utf-8') as f:
         data = json.load(f)
